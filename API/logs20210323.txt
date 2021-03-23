@@ -1,0 +1,50 @@
+2021-03-23 14:48:06.948 +03:00 [DBG] Hosting starting
+2021-03-23 14:48:07.215 +03:00 [DBG] Loaded hosting startup assembly API
+2021-03-23 14:48:07.222 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-03-23 14:48:07.222 +03:00 [INF] Hosting environment: Development
+2021-03-23 14:48:07.222 +03:00 [INF] Content root path: C:\Users\İbrahim Taşkın\Source\Repos\ErrorHandling\API
+2021-03-23 14:48:07.231 +03:00 [DBG] Hosting started
+2021-03-23 14:48:07.246 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44310/swagger/index.html - -
+2021-03-23 14:48:07.249 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2021-03-23 14:48:07.343 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44310/swagger/index.html - - - 200 - text/html;charset=utf-8 100.9197ms
+2021-03-23 14:48:07.344 +03:00 [DBG] Connection ID "18374686498462105637" disconnecting.
+2021-03-23 14:48:07.485 +03:00 [DBG] Connection ID "18230571314681217062" disconnecting.
+2021-03-23 14:48:07.486 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44310/swagger/favicon-16x16.png - -
+2021-03-23 14:48:07.538 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44310/swagger/v1/swagger.json - -
+2021-03-23 14:48:07.504 +03:00 [DBG] The file transmission was cancelled
+System.OperationCanceledException: The operation was canceled.
+   at System.Threading.CancellationToken.ThrowOperationCanceledException()
+   at System.Threading.CancellationToken.ThrowIfCancellationRequested()
+   at Microsoft.AspNetCore.Http.SendFileResponseExtensions.SendFileAsyncCore(HttpResponse response, IFileInfo file, Int64 offset, Nullable`1 count, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileContext.SendAsync()
+2021-03-23 14:48:07.557 +03:00 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2021-03-23 14:48:07.557 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44310/swagger/favicon-16x16.png - - - 0 665 image/png 70.8437ms
+2021-03-23 14:48:07.602 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44310/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 63.9666ms
+2021-03-23 14:48:07.602 +03:00 [DBG] Connection ID "17942340947119439964" disconnecting.
+2021-03-23 14:48:09.947 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44310/WeatherForecast - -
+2021-03-23 14:48:09.947 +03:00 [DBG] The request path  does not match the path filter
+2021-03-23 14:48:09.964 +03:00 [DBG] 1 candidate(s) found for the request path '/WeatherForecast'
+2021-03-23 14:48:09.968 +03:00 [DBG] Endpoint 'API.Controllers.WeatherForecastController.Get (API)' with route pattern 'WeatherForecast' is valid for the request path '/WeatherForecast'
+2021-03-23 14:48:09.968 +03:00 [DBG] Request matched endpoint 'API.Controllers.WeatherForecastController.Get (API)'
+2021-03-23 14:48:09.969 +03:00 [INF] Executing endpoint 'API.Controllers.WeatherForecastController.Get (API)'
+2021-03-23 14:48:09.976 +03:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2021-03-23 14:48:09.991 +03:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[API.WeatherForecast] Get() on controller API.Controllers.WeatherForecastController (API).
+2021-03-23 14:48:09.991 +03:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2021-03-23 14:48:09.992 +03:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2021-03-23 14:48:09.992 +03:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2021-03-23 14:48:09.992 +03:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2021-03-23 14:48:09.992 +03:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2021-03-23 14:48:09.993 +03:00 [DBG] Executing controller factory for controller API.Controllers.WeatherForecastController (API)
+2021-03-23 14:48:09.993 +03:00 [DBG] Executed controller factory for controller API.Controllers.WeatherForecastController (API)
+2021-03-23 14:48:14.505 +03:00 [INF] Product nesnesi eklendi. => API.Models.Products
+2021-03-23 14:48:14.507 +03:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2021-03-23 14:48:14.510 +03:00 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2021-03-23 14:48:14.510 +03:00 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2021-03-23 14:48:14.511 +03:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2021-03-23 14:48:14.511 +03:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2021-03-23 14:48:14.511 +03:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2021-03-23 14:48:14.512 +03:00 [INF] Executing ObjectResult, writing value of type 'API.WeatherForecast[]'.
+2021-03-23 14:48:14.523 +03:00 [INF] Executed action API.Controllers.WeatherForecastController.Get (API) in 4528.3862ms
+2021-03-23 14:48:14.524 +03:00 [INF] Executed endpoint 'API.Controllers.WeatherForecastController.Get (API)'
+2021-03-23 14:48:14.524 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44310/WeatherForecast - - - 200 - application/json;+charset=utf-8 4577.9972ms
+2021-03-23 14:48:14.525 +03:00 [DBG] Connection ID "18014398519682531349" disconnecting.
