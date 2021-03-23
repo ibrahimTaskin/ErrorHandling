@@ -3,10 +3,12 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace API.Models
 {
-    public class Products
+    public class Product
     {
         [BsonId]
-        public ObjectId _Id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
+        [BsonElement("Name")]
         public string Name { get; set; }
     }
 }

@@ -2,6 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API.Data;
+using API.Data.Interfaces;
+using API.Repositories;
+using API.Repositories.Interfaces;
+using API.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 
 namespace API
@@ -28,6 +34,18 @@ namespace API
         {
 
             services.AddControllers();
+
+            // Secret Json içindeki TestDatabaseSettings içindeki verileri al.
+            services.Configure<ProductDatabaseSettings>(Configuration.GetSection("TestDatabaseSettings"));
+
+            // Yukarýdaki Configure içinden aldýðýmýz veriyi , IProductDatabaseSettings'i nerede kullanýrsan DI ile
+            // bize Database özelliklerini getirecek
+            services.AddSingleton<IProductDatabaseSettings>(opt =>
+                opt.GetRequiredService<IOptions<ProductDatabaseSettings>>().Value);
+
+            services.AddTransient<IProductContext, ProductContext>();
+            services.AddTransient<IProductRepository, ProductRepository>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
