@@ -29,7 +29,7 @@ namespace API.Controllers
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
             var products = await _productRepository.GetProducts();
-            _logger.LogInformation($"Getirilen ürünler : {products.ToString()}");
+            _logger.LogError($"Getirilen ürünler : {products.ToString()}");
             return Ok(products);
         }
 
@@ -46,7 +46,6 @@ namespace API.Controllers
                 _logger.LogError($"{id}'ye sahip product getirilemedi.");
                 return NotFound();
             }
-            _logger.LogInformation($"Getirilen ürün : {product.ToString()}");
             return Ok(product);
         }
 
