@@ -712,3 +712,19 @@ MongoDB.Driver.MongoWriteException: A write operation resulted in an error.
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
 2021-03-24 12:56:40.223 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44310/api/v1/Product application/json 49 - 500 - application/json 443.1790ms
 2021-03-24 12:56:40.223 +03:00 [DBG] Connection ID "18230571314681217076" disconnecting.
+2021-03-24 13:16:17.055 +03:00 [DBG] Hosting starting
+2021-03-24 13:16:17.324 +03:00 [DBG] Loaded hosting startup assembly API
+2021-03-24 13:16:17.331 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-03-24 13:16:17.336 +03:00 [INF] Hosting environment: Development
+2021-03-24 13:16:17.341 +03:00 [INF] Content root path: C:\Users\İbrahim Taşkın\Source\Repos\ErrorHandling\API
+2021-03-24 13:16:17.346 +03:00 [DBG] Hosting started
+2021-03-24 13:16:17.359 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44310/swagger/index.html - -
+2021-03-24 13:16:17.362 +03:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2021-03-24 13:16:17.454 +03:00 [DBG] Connection ID "18014398511092596805" disconnecting.
+2021-03-24 13:16:17.454 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44310/swagger/index.html - - - 200 - text/html;charset=utf-8 96.4360ms
+2021-03-24 13:16:17.631 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44310/swagger/v1/swagger.json - -
+2021-03-24 13:16:17.711 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44310/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 80.8607ms
+2021-03-24 13:16:17.712 +03:00 [DBG] Connection ID "18374686498462105658" disconnecting.
+2021-03-24 13:16:23.529 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44310/swagger/v1/swagger.json - -
+2021-03-24 13:16:23.539 +03:00 [DBG] Connection ID "18014398515387564064" disconnecting.
+2021-03-24 13:16:23.539 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44310/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 10.2851ms
