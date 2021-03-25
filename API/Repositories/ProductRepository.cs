@@ -20,7 +20,7 @@ namespace API.Repositories
 
         public async Task<Result<IEnumerable<Product>>> GetProducts() // İstek Result tipinde olmalı
         {
-            return Result<IEnumerable<Product>>.Success(await _context.Products.Find(p => true).ToListAsync()); // Geri dönüş de Result tipinde olmalı
+            return Result<IEnumerable<Product>>.Success(await _context.Products.Find(p => true).ToListAsync()); // Geri dönüş de Result tipinde olmalı.
         }
 
         public async Task<Result<Product>> GetProduct(string id)

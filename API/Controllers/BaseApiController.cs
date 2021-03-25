@@ -20,14 +20,13 @@ namespace API.Controllers
         /// <returns></returns>
         protected ActionResult HandleResult<T>(Result<T> result)
         {
+            if (result == null) return NotFound(); // Kendi null gelirse notFound dön
+
             if (result.IsSuccess && result.Value != null) // succes ve dönen value null değilse değeri göster.
-            {
                 return Ok(result.Value);
-            }
+
             if (result.IsSuccess && result.Value == null) // succes ama dönen value null ise notFound
-            {
                 return NotFound();
-            }
 
             return BadRequest(result.Error); // hiç biri değilse BadRequest
         }
