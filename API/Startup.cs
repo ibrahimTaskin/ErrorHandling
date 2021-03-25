@@ -10,6 +10,8 @@ using API.Models;
 using API.Repositories;
 using API.Repositories.Interfaces;
 using API.Settings;
+using API.Validation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -36,7 +38,9 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation(config=> {
+                config.RegisterValidatorsFromAssemblyContaining<ProductValidator>();
+            });
 
             // Secret Json içindeki TestDatabaseSettings içindeki verileri al.
             services.Configure<ProductDatabaseSettings>(Configuration.GetSection("TestDatabaseSettings"));

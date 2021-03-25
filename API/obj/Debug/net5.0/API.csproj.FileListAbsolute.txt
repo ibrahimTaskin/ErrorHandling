@@ -51,3 +51,6 @@ C:\Users\İbrahim Taşkın\Source\Repos\ErrorHandling\API\bin\Debug\net5.0\Seril
 C:\Users\İbrahim Taşkın\Source\Repos\ErrorHandling\API\bin\Debug\net5.0\Serilog.Sinks.Console.dll
 C:\Users\İbrahim Taşkın\Source\Repos\ErrorHandling\API\bin\Debug\net5.0\Serilog.Sinks.Debug.dll
 C:\Users\İbrahim Taşkın\Source\Repos\ErrorHandling\API\bin\Debug\net5.0\Serilog.Sinks.File.dll
+C:\Users\İbrahim Taşkın\Source\Repos\ErrorHandling\API\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\İbrahim Taşkın\Source\Repos\ErrorHandling\API\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+C:\Users\İbrahim Taşkın\Source\Repos\ErrorHandling\API\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll

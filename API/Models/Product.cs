@@ -7,8 +7,11 @@ namespace API.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
+        [BsonRequired]
         public string Id { get; set; }
+
         [BsonElement("Name")]
+        [BsonRequired]
         public string Name { get; set; }
     }
 }

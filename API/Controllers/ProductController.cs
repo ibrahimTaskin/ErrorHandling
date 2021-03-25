@@ -11,9 +11,7 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
-    [Route("api/v1/[controller]")]
-    [ApiController]
-    public class ProductController : ControllerBase
+    public class ProductController : BaseApiController
     {
         private readonly IProductRepository _productRepository;
         private readonly ILogger<ProductController> _logger;
@@ -26,27 +24,18 @@ namespace API.Controllers
 
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Product>), (int)HttpStatusCode.OK)] // Geri dönüşte beklediğimiz tip
-        public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
+        public async Task<IActionResult> GetProducts() // HandleResultta ActionResult verdiğimiz için herhangi bir değer vermek zorunda değiliz.
         {
-            var products = await _productRepository.GetProducts();
-            _logger.LogError($"Getirilen ürünler : {products.ToString()}");
-            return Ok(products);
+            return HandleResult(await _productRepository.GetProducts()); // Geri dönüş zaten Repository'de Result tipinde
         }
 
 
         [HttpGet("{id:length(24)}", Name = "GetProduct")] // Custom Name, id must 24 length
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)] // Geri dönüşte beklediğimiz tip
-        public async Task<ActionResult<Product>> GetProductById(string id)
+        public async Task<IActionResult> GetProductById(string id)
         {
-            var product = await _productRepository.GetProduct(id);
-
-            if (product == null)
-            {
-                _logger.LogError($"{id}'ye sahip product getirilemedi.");
-                return NotFound();
-            }
-            return Ok(product);
+            return HandleResult(await _productRepository.GetProduct(id)); // HandleResult ile geri dönüşleri kontrol edebiliyoruz.
         }
 
 

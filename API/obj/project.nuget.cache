@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "o4Ut09gU148V11uWY4dK3/2iCGKW0z30qKici9uDuJmIP4TlFeZSjGhQq19+bVO+Q7RrwruLUfsweRog9sL08Q==",
+  "dgSpecHash": "ARrPBj3moYxgaZI/825pNcnfCPMSsdWAfPLtg/AJHxPZhg14AevUCFS4AzgzKQVKZQTf0rRhuJoW92GVUUrF+g==",
   "success": true,
   "projectFilePath": "C:\\Users\\İbrahim Taşkın\\Source\\Repos\\ErrorHandling\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\İbrahim Taşkın\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
+    "C:\\Users\\İbrahim Taşkın\\.nuget\\packages\\fluentvalidation\\9.5.3\\fluentvalidation.9.5.3.nupkg.sha512",
+    "C:\\Users\\İbrahim Taşkın\\.nuget\\packages\\fluentvalidation.aspnetcore\\9.5.3\\fluentvalidation.aspnetcore.9.5.3.nupkg.sha512",
+    "C:\\Users\\İbrahim Taşkın\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\9.5.3\\fluentvalidation.dependencyinjectionextensions.9.5.3.nupkg.sha512",
     "C:\\Users\\İbrahim Taşkın\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\İbrahim Taşkın\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\İbrahim Taşkın\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

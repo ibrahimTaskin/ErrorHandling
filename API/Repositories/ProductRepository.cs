@@ -1,4 +1,5 @@
-﻿using API.Data.Interfaces;
+﻿using API.Application;
+using API.Data.Interfaces;
 using API.Models;
 using API.Repositories.Interfaces;
 using MongoDB.Driver;
@@ -17,14 +18,16 @@ namespace API.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Product>> GetProducts()
+        public async Task<Result<IEnumerable<Product>>> GetProducts() // İstek Result tipinde olmalı
         {
-            return await _context.Products.Find(p => true).ToListAsync();
+            return Result<IEnumerable<Product>>.Success(await _context.Products.Find(p => true).ToListAsync()); // Geri dönüş de Result tipinde olmalı
         }
 
-        public async Task<Product> GetProduct(string id)
+        public async Task<Result<Product>> GetProduct(string id)
         {
-            return await _context.Products.Find(p => p.Id == id).FirstOrDefaultAsync();
+            var product = await _context.Products.Find(p => p.Id == id).FirstOrDefaultAsync();
+
+            return Result<Product>.Success(product); // Succes ile gönderiyoruz.
         }
 
         public async Task Create(Product product)

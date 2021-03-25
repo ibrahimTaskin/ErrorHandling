@@ -1,4 +1,5 @@
-﻿using API.Models;
+﻿using API.Application;
+using API.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +9,8 @@ namespace API.Repositories.Interfaces
 {
     public interface IProductRepository
     {
-        Task<IEnumerable<Product>> GetProducts();
-        Task<Product> GetProduct(string id);
+        Task<Result<IEnumerable<Product>>> GetProducts();
+        Task<Result<Product>> GetProduct(string id); // Result tipinde geri dönüş istiyoruz.
 
         Task Create(Product product);
         Task<bool> Update(Product product);
