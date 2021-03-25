@@ -2,28 +2,44 @@
 
 - ## AspNet Core Own Error Handler
 
-  > Core'un `app.UseExceptionHandler()` özelliğini kullanarak hata yönetimini yapabiliriz.
+  > We can use `app.UseExceptionHandler()` .Net Core feature.
 
 - ## Custom Error Handler and Middleware
+
   ```
-  Task InvokeAsync(HttpContext httpContext)
-  {
-    try
-          {
-              await _next(httpContext);
-          }
-          catch (Exception ex)
-          {
-              _logger.LogError($"Something went wrong {ex}");
-              await HandleExceptionAsync(httpContext);
-          }
-  }
+  public async Task InvokeAsync(HttpContext context)
+        {
+            try
+            {
+                await _next(context); // Herhangi bir sorun yoksa diğer Middleware'e geçecek. _next
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Something went wrong {ex.Message}");
+
+                context.Response.ContentType = "application/json";
+                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+
+                var response = _env.IsDevelopment()
+                    ? new ErrorDetails(context.Response.StatusCode, ex.Message, ex.StackTrace?.ToString())
+                    : new ErrorDetails(context.Response.StatusCode, "Server Error");
+
+                var options = new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+
+                var json = JsonSerializer.Serialize(response, options);
+
+                await context.Response.WriteAsync(json);
+            }
+        }
   ```
-  > \_next RequestDelegate'i Core request ve response pipeline'ı için kullanılan delegedir. Bununla ilgili kısma istek gönderir ve geri dönüş alırız. Yukarıdaki örnekte HttpContext'e istek atıyoruz.
+
+  > \_next RequestDelegate is used Core pipeline.
+
 - ## MongoDb Configuration
-  - Settings arayüzünden gelen Mongo bağlantı bilgilerini constructor methodu içinde kullandım.
-  
-  ``` 
+
+  - Mongo Client settings configured here. ConnectionString , DatabaseName and CollectionName comes IProductDatabaseSettings, from User Secrets.
+
+  ```
   public class ProductContext : IProductContext
     {
         public ProductContext(IProductDatabaseSettings databaseSettings)
@@ -38,3 +54,11 @@
         public IMongoCollection<Product> Products { get; }
     }
   ```
+
+  ## Results
+
+  - Null Product add
+    ![](PostErrorMessage.png)
+
+  - Invalid Product Id Request
+    ![](GetProductById-Response.png)
